@@ -3,6 +3,7 @@ var _paq = window._paq || [];
 _paq.push(["trackPageView"]);
 _paq.push(["enableLinkTracking"]);
 $pdk.controller.addEventListener("OnReleaseStart", function (payload) {
+  console.log(payload);
   _paq.push([
     "MediaAnalytics::setMediaTitleFallback",
     function () {
