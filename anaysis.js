@@ -7,25 +7,21 @@ $pdk.controller.addEventListener("OnPlayerLoaded", function (payload) {
 });
 
 $pdk.controller.addEventListener("OnPlayerReady", function (payload) {
-  console.log("OnPlayerReady", payload);
+  $pdk.controller.start(payload.data.releaseURL);
 });
 
 $pdk.controller.addEventListener("OnReleaseStart", function (payload) {
-  console.log("ReleaseStart", payload);
+  _paq.push([
+    "MediaAnalytics::setMediaTitleFallback",
+    function () {
+      return payload.data.title;
+    },
+  ]);
 });
 
 $pdk.controller.addEventListener("OnMediaLoadStart", function (payload) {
   console.log("MediaLoadStart", payload);
 });
-// $pdk.controller.addEventListener("OnReleaseStart", function (payload) {
-//   console.log(payload);
-//   _paq.push([
-//     "MediaAnalytics::setMediaTitleFallback",
-//     function () {
-//       return payload.data.title;
-//     },
-//   ]);
-// });
 
 (function () {
   var u = "https://vsl.matomo.cloud/";
