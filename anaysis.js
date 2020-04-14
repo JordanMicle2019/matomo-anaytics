@@ -2,15 +2,11 @@ window.piwikMediaAnalyticsAsyncInit = function () {
   var MA = Piwik.MediaAnalytics;
 
   function MyPlayer(node, mediaType) {
-    console.log("1");
-
     if (node.hasPlayerInstance) {
-      console.log("2");
       // prevent creating multiple trackers for the same media
       // when scanning for media multiple times
       return;
     }
-    console.log("3");
 
     node.hasPlayerInstance = true;
 
