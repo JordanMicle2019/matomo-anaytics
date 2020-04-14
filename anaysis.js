@@ -2,15 +2,30 @@ var _paq = window._paq || [];
 /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
 _paq.push(["trackPageView"]);
 _paq.push(["enableLinkTracking"]);
-$pdk.controller.addEventListener("OnReleaseStart", function (payload) {
-  console.log(payload);
-  _paq.push([
-    "MediaAnalytics::setMediaTitleFallback",
-    function () {
-      return payload.data.title;
-    },
-  ]);
+$pdk.controller.addEventListener("OnPlayerLoaded", function (payload) {
+  console.log("OnPlayerLoaded", payload);
 });
+
+$pdk.controller.addEventListener("OnPlayerReady", function (payload) {
+  console.log("OnPlayerReady", payload);
+});
+
+$pdk.controller.addEventListener("OnReleaseStart", function (payload) {
+  console.log("ReleaseStart", payload);
+});
+
+$pdk.controller.addEventListener("OnMediaLoadStart", function (payload) {
+  console.log("MediaLoadStart", payload);
+});
+// $pdk.controller.addEventListener("OnReleaseStart", function (payload) {
+//   console.log(payload);
+//   _paq.push([
+//     "MediaAnalytics::setMediaTitleFallback",
+//     function () {
+//       return payload.data.title;
+//     },
+//   ]);
+// });
 
 (function () {
   var u = "https://vsl.matomo.cloud/";
