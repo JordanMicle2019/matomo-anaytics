@@ -2,9 +2,6 @@ var _paq = window._paq || [];
 /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
 _paq.push(["trackPageView"]);
 _paq.push(["enableLinkTracking"]);
-$pdk.controller.addEventListener("OnPlayerLoaded", function (payload) {
-  console.log("OnPlayerLoaded", payload);
-});
 
 $pdk.controller.addEventListener("OnPlayerReady", function (payload) {
   $pdk.controller.start(payload.data.releaseURL);
@@ -17,10 +14,6 @@ $pdk.controller.addEventListener("OnReleaseStart", function (payload) {
       return payload.data.title;
     },
   ]);
-});
-
-$pdk.controller.addEventListener("OnMediaLoadStart", function (payload) {
-  console.log("MediaLoadStart", payload);
 });
 
 (function () {
