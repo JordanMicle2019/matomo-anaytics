@@ -12,9 +12,16 @@ $pdk.controller.addEventListener("OnReleaseStart", function (payload) {
   // ]);
 });
 
-$pdk.controller.addEventListener("OnMediaLoaded", function (payload) {
+$pdk.controller.addEventListener("OnMediaLoadStart", function (payload) {
   console.log(payload);
-})(function () {
+  // _paq.push([
+  //   "MediaAnalytics::setMediaTitleFallback",
+  //   function () {
+  //     return payload.data.title;
+  //   },
+  // ]);
+});
+(function () {
   var u = "https://vsl.matomo.cloud/";
   _paq.push(["setTrackerUrl", u + "matomo.php"]);
   _paq.push(["setSiteId", "1"]);
