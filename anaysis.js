@@ -4,14 +4,17 @@ _paq.push(["trackPageView"]);
 _paq.push(["enableLinkTracking"]);
 $pdk.controller.addEventListener("OnReleaseStart", function (payload) {
   console.log(payload);
-  _paq.push([
-    "MediaAnalytics::setMediaTitleFallback",
-    function () {
-      return payload.data.title;
-    },
-  ]);
+  // _paq.push([
+  //   "MediaAnalytics::setMediaTitleFallback",
+  //   function () {
+  //     return payload.data.title;
+  //   },
+  // ]);
 });
-(function () {
+
+$pdk.controller.addEventListener("OnMediaLoaded", function (payload) {
+  console.log(payload);
+})(function () {
   var u = "https://vsl.matomo.cloud/";
   _paq.push(["setTrackerUrl", u + "matomo.php"]);
   _paq.push(["setSiteId", "1"]);
